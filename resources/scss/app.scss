@@ -1,0 +1,27 @@
+@import './variable';
+@import '~noty/src/noty.scss';
+@import '~noty/src/themes/mint.scss';
+nav li a {
+    transition: $smooth;
+    &:hover {
+        color: $primary;
+    }
+}
+
+.hero {
+    background-color: $secondary;
+}
+
+.backcolor {
+    background-color: rgba(102, 126, 234, 1);
+}
+
+.backcolor ul li a {
+    color: white;
+}
+
+//login css 
+.backcolorlogin {
+    background: #007bff;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+}

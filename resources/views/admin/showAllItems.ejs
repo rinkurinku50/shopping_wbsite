@@ -1,0 +1,61 @@
+<section>
+    <div class="container mt-5">
+        <% if(items) { %>
+            <div class="card-deck">
+                <div class="row ">
+                    <% items.forEach(function(item) { %>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img class="card-img-top" height="250" src="<%= item.image %>" alt="Card image cap">
+                                <div class="card-body">
+                                    <div class="card-title ">
+                                        <span class="d-inline-block ">
+                                            <%= item.catagory %>
+                                        </span>
+                                        <span class="d-inline-block float-right">
+                                          <b>P:</b>  <%= item.price %>
+                                        </span>
+                                    </div>
+                                    <div class="card-text">
+
+                                        <span class="d-inline-block ">
+                                            <%= item.name %>
+                                        </span>
+                                        <span class="d-inline-block float-right">
+                                          <b>Q:</b>  <%= item.quantity %>
+                                        </span>
+                                    </div>
+                                    <p class="card-text">
+
+                                        <% if(item.size.S) { %>
+                                            <span class="badge badge-pill badge-secondary">S</span>
+                                            <% } %>
+                                                <% if(item.size.M) { %>
+                                                    <span class="badge badge-pill badge-secondary">M</span>
+                                                    <% } %>
+                                                        <% if(item.size.L) { %>
+                                                            <span class="badge badge-pill badge-secondary">L</span>
+                                                            <% } %>
+                                                                <% if(item.size.XL) { %>
+                                                                    <span class="badge badge-pill badge-secondary">XL</span>
+                                                                    <% } %>
+                                                                        <% if(item.size.XXL) { %>
+                                                                            <span class="badge badge-pill badge-secondary">XXL</span>
+                                                                            <% } %>
+                                                                                <p class="card-text"><small class="text-muted">Post At <%= moment(item.createdAt).format('llll');  %>  </small></p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <%   }) %>
+                </div>
+            </div>
+            <% } %>
+
+
+
+    </div>
+    <!-- /.container -->
+</section>

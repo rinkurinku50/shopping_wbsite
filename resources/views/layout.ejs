@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+    <% if(user) { %>
+
+        <div class="container">
+            <div class="backcolor">
+
+                <ul class="nav nav-tabs ">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/itemAdd">Add Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users">All User</a>
+                    </li>
+                    <li class="nav-item ml-auto">
+                        <form id="logout" action="/logout" method="POST">
+                            <a class="nav-link" onclick="document.getElementById('logout').submit()" href="#">logout</a>
+                        </form>
+                    </li>
+
+                </ul>
+
+
+
+
+                <% } %>
+            </div>
+            <%- body %>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+        <script src="/js/app.js"></script>
+        <script>
+            $(document).ready(function() {
+                //$(".nav .nav-link").on("click", function(e) {
+
+                //    $(".nav").find(".active").removeClass("active");
+                //    $(this).addClass("active");
+                //});
+                $(".card").hover(
+                    function() {
+                        $(this).addClass('shadow-lg').css('cursor', 'pointer');
+                    },
+                    function() {
+                        $(this).removeClass('shadow-lg');
+                    }
+                );
+                //datatable
+                $('#example').DataTable({
+                    "scrollX": true
+                });
+
+            });
+        </script>
+</body>
+
+</html>
